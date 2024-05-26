@@ -1,0 +1,526 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this template
+*/
+/* 
+    Created on : 2 Mar 2024, 23:00:49
+    Author     : ACER
+*/
+
+:root {
+    --background-color: #1abc9c;
+    --selection-color: rgba(26, 188, 156, 0.3);
+    --title-color: #16a085;
+    --button-hover-color: #12876f;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-size: 17px;
+}
+
+body {
+    background-color: var(--background-color);
+
+}
+
+.container {
+    background-color: #fff;
+    margin: auto;
+    margin-top: 5%;
+    width: 75%;
+    border: 3px solid green;
+
+    min-width: 88px;
+
+    /* padding: 10px; */
+    display: block;
+}
+
+.container::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.left,
+.chat {
+    padding: 10px;
+
+}
+
+.left {
+    float: left;
+    width: 35%;
+    border-right: solid 1px #333;
+    height: 78vh;
+    /* background-color: blue; */
+}
+
+.header-left {
+    border-bottom: solid 1px #333;
+}
+
+.header-left img,
+.header-left h1,
+.header-left i {
+    display: inline-block;
+    margin-bottom: 15px;
+    vertical-align: middle;
+}
+
+.header-left img {
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+.header-left h1 {
+    text-overflow: ellipsis;
+    font-size: 1.4em;
+}
+
+.header-left i {
+    padding: 15px 0px;
+    margin-right: 15px;
+    float: right;
+}
+
+.main-left {
+    margin-left: 2%;
+    max-height: 78vh;
+}
+
+.main-left .title {
+    padding: 10px 0;
+}
+
+.listfriend {
+    max-height: 62vh;
+    overflow: auto;
+    overflow: -moz-scrollbars-none;
+    -ms-overflow-style: none;
+}
+
+.listfriend::-webkit-scrollbar {
+    width: 0 !important;
+    display: none;
+}
+
+.box-friend {
+    padding: 5px 10px;
+    margin-bottom: 15px;
+}
+
+.box-friend:hover {
+    cursor: pointer;
+}
+
+.box-friend img,
+.box-friend h3 {
+    display: inline-block;
+    margin-bottom: 15px;
+    vertical-align: middle;
+}
+
+.box-friend h3 {
+    margin-top: -20px;
+}
+
+.status {
+    margin-left: 55px;
+    margin-top: -30px;
+    font-size: 0.7em;
+    opacity: 0.5;
+}
+
+.active {
+    background-color: #EFEFEF;
+    border-radius: 15px;
+    /* margin: 5px; */
+}
+
+.chat {
+    float: left;
+    display: flex;
+    flex-direction: column;
+    /* background-color: blueviolet; */
+    border-top: solid 1px #333;
+    width: 65%;
+}
+
+.chat .chat-header {
+    /* padding: 7px 10px; */
+    height: 9.5vh;
+    border-bottom: solid 1px #333;
+    display: inline-block;
+}
+
+.chat-header img {
+    float: left;
+    margin: 5px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.chat-header h1 {
+    margin-left: 20px;
+    padding: 10px;
+    font-size: 1.2em;
+    min-width: 65%;
+    width: 55%;
+}
+
+.chat-header .status {
+    padding: 23px 10px;
+    margin-left: 20px;
+    opacity: 0.9;
+    min-width: 65%;
+    width: 55%;
+}
+
+.chat-header .close {
+    float: right;
+    margin-top: -55px;
+    margin-right: 15px;
+}
+
+.chat-header .close:hover {
+    cursor: pointer;
+}
+
+.close i {
+    font-size: 1.5rem;
+}
+
+/* .chat .chat-header img {
+    float: left;
+    border-radius: 40px;
+    width: 40px
+} */
+
+.chat .chat-header .chat-about {
+    float: left;
+    padding-left: 10px
+}
+
+.chat .chat-history {
+    padding: 20px;
+    border-bottom: 2px solid #fff;
+    overflow: auto;
+    overflow: -moz-scrollbars-none;
+    -ms-overflow-style: none;
+    max-height: 56vh;
+    height: 60vh;
+}
+
+.chat .chat-history::-webkit-scrollbar {
+    width: 0 !important;
+    display: none;
+}
+
+.chat .chat-history ul {
+    padding: 0
+}
+
+.chat .chat-history ul li {
+    list-style: none;
+    margin-bottom: 30px
+}
+
+.chat .chat-history ul li:last-child {
+    margin-bottom: 0px
+}
+
+.chat .chat-history .message-data {
+    margin-bottom: 15px
+}
+
+/* 
+.chat .chat-history .message-data img {
+    border-radius: 40px;
+    width: 40px
+} */
+
+.message-data-time {
+    color: #434651;
+    padding-left: 6px;
+}
+
+.chat .chat-history .message {
+    color: #444;
+    padding: 18px 20px;
+    line-height: 26px;
+    font-size: 16px;
+    border-radius: 7px;
+    display: inline-block;
+    position: relative
+}
+
+.chat .chat-history .message:after {
+    bottom: 100%;
+    left: 7%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-bottom-color: #fff;
+    border-width: 10px;
+    margin-left: -10px
+}
+
+.time {
+    opacity: 0.7;
+    padding: 7px 20px;
+    line-height: 10px;
+    font-size: 16px;
+    clear: both;
+}
+
+.chat .chat-history .my-message {
+    background: #efefef
+}
+
+.chat .chat-history .my-message:after {
+    bottom: 100%;
+    left: 30px;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-bottom-color: #efefef;
+    border-width: 10px;
+    margin-left: -10px
+}
+
+.chat .chat-history .other-message {
+    background: #e8f1f3;
+    text-align: right
+}
+
+.chat .chat-history .other-message:after {
+    border-bottom-color: #e8f1f3;
+    left: 93%
+}
+
+.chat .chat-message {
+    padding: 20px
+}
+.name-friend{
+    margin-left: 2px;
+    padding-left: 5px;
+}
+.online,
+.offline,
+.me {
+    vertical-align: middle
+}
+
+.online {
+    color: #86c541
+}
+
+.offline {
+    color: #e47297
+}
+
+.me {
+    color: #1d8ecd
+}
+
+.float-right {
+    float: right;
+}
+
+.clearfix:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0
+}
+
+.form-send {
+    text-align: center;
+    padding-top: 15px;
+}
+
+.form-control {
+    text-align: center;
+    padding: 5px;
+    border-radius: 15px;
+}
+
+.size-input {
+    width: 75%;
+    margin-right: 35px;
+}
+
+.size-button {
+    height: 35px;
+    width: 10%;
+}
+
+@media screen and (max-width: 1344px) {
+
+    .left,
+    .chat {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 656px) {
+    body {
+        width: 100%;
+        min-width: 700px;
+    }
+}
+
+
+.avatar-img {
+    vertical-align: middle;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.title.friends {
+    display: flex;
+    justify-content: space-between;
+}
+
+.title.friends span strong {
+    font-size: 1.3rem;
+    padding-left: 5px;
+}
+
+#addFriends {
+    padding: 3px;
+    border: solid 1px #333;
+    border-radius: 5px;
+}
+
+.addFriendTable {
+    flex-direction: column;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 5%;
+}
+
+.addFriendTable table th h3 {
+    padding-right: 15px;
+}
+
+.table .tbody {
+    margin-bottom: 15px;
+    display: inline;
+}
+
+#resultFriends {
+    padding-top: 15px;
+}
+
+#resultFriends ul {
+    margin-top: 15px;
+}
+
+.btnsearch {
+    margin-left: 5px;
+    border-radius: 5px;
+    padding: 2.5px;
+}
+
+.btn {
+    border-radius: 5px;
+    padding: 2.5px;
+    float: right;
+    margin-left: 2px;
+    margin: 9px 2px;
+}
+
+.requestAddFriend {
+    background-color: #1d8ecd;
+
+    color: white;
+    /* Màu chữ trắng */
+    border: none;
+    /* Không có viền */
+    padding: 5px 10px;
+    /* Kích thước padding */
+    cursor: pointer;
+    /* Con trỏ khi rê chuột */
+}
+
+.tagname {
+    border: solid 1px #333;
+    border-radius: 5px;
+    padding: 5px;
+    max-width: 100%;
+    margin-bottom: 5px;
+}
+
+.tagname span img {
+    border: solid 2px #1d8ecd;
+}
+
+#searchFriend {
+    border: solid 1px #333;
+    padding: 2px;
+    border-radius: 5px;
+    width: 75%;
+}
+
+.decorname {
+    border: solid 1px #333;
+    border-radius: 5px;
+    padding: 5px 10px;
+    background-color: #86c541;
+    margin-left: 5px;
+}
+
+.listaddfriend {
+    overflow: auto;
+    overflow: -moz-scrollbars-none;
+    -ms-overflow-style: none;
+    max-height: 60vh;
+}
+
+.listaddfriend::-webkit-scrollbar {
+    width: 0 !important;
+    display: none;
+}
+
+.close-friend {
+    float: right;
+    padding: 4px 8px;
+    margin-right: 15px;
+    border: solid 2px #333;
+    border-radius: 10px;
+    margin-top: -1px;
+}
+#acceptFriends{
+    padding: 3px;
+    border: solid 1px #333;
+    border-radius: 5px;
+}
+.messageCount {
+    /* display: inline-flex; */
+    /* float: left; */
+    position: absolute;
+    margin: 7px 20px;
+    background-color: red;
+    padding: 2px 7px;
+    border: solid 1px;
+    border-radius: 10px;
+    font-size: 10px;
+    color: #e8f1f3;
+}
