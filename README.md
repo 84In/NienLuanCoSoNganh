@@ -6,3 +6,4 @@
   + FB: https://www.facebook.com/n.trungtins/
   + Zalo: 0776872151
   + Email: trungtin7166293@gmail.com
+- Công nghệ sử dụng: Spring MVC, WebSocket, AJAX,
